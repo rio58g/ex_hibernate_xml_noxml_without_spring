@@ -1,0 +1,1 @@
+# ex_hibernate_xml_without_spring
