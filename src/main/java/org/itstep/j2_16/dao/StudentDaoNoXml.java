@@ -7,18 +7,15 @@ import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.itstep.j2_16.HibernateUtil;
 import org.itstep.j2_16.entity.Student;
 
-public class StudentDao {
+public class StudentDaoNoXml {
 
     public List<Student> getAll() {
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-
-//        List<Student> students = session.createCriteria(Student.class)
-//                .setResultTransformer(DISTINCT_ROOT_ENTITY)
-//                .list();
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<Student> query = builder.createQuery(Student.class);
@@ -28,6 +25,8 @@ public class StudentDao {
 
         session.getTransaction().commit();
         session.close();
+
+        HibernateUtil.shutdown();
 
         return students;
     }
