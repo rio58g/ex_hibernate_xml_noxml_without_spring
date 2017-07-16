@@ -4,7 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import static javax.persistence.CascadeType.ALL;
 
 @Entity(name = "STUDENT") // name of the entity to make a call from the sql criteria and so on
 @Table(name = "STUDENT") // name of the table in the DB
@@ -16,17 +21,21 @@ public class Student {
     private String firstName;
     private String lastName;
     private String fullName;
-    private String passport;
+    @OneToOne(cascade = ALL)
+    @JoinColumn(name = "passport_id")
+    private Passport passport;
     private String description;
 
     // hibernate merge can't work without default constructor
     public Student() {
     }
 
-    public Student(String firstName, String lastName) {
+    public Student(String firstName, String lastName, Passport passport) {
         setFirstName(firstName);
         setLastName(lastName);
+        setFullName();
 
+        setPassport(passport);
     }
 
     public int getId() {
@@ -67,11 +76,11 @@ public class Student {
 //                + (StringUtils.isBlank(lastName) ? "" : lastName);
     }
 
-    public String getPassport() {
+    public Passport getPassport() {
         return passport;
     }
 
-    public void setPassport(String passport) {
+    public void setPassport(Passport passport) {
         this.passport = passport;
     }
 

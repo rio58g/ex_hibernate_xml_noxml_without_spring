@@ -9,6 +9,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
+import org.itstep.j2_16.entity.Passport;
 import org.itstep.j2_16.entity.Student;
 
 public class HibernateConfig {
@@ -41,6 +42,7 @@ public class HibernateConfig {
                 // Create MetadataSources
                 MetadataSources sources = new MetadataSources(registry);
                 // Add annotated class (mappings)
+                sources.addAnnotatedClass(Passport.class);
                 sources.addAnnotatedClass(Student.class);
 
                 // Create Metadata

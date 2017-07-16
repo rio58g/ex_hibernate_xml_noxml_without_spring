@@ -7,6 +7,7 @@ import org.hibernate.cfg.Configuration;
 import org.itstep.j2_16.config.HibernateConfig;
 import org.itstep.j2_16.dao.StudentDao;
 import org.itstep.j2_16.dao.StudentDaoUniversal;
+import org.itstep.j2_16.entity.Passport;
 import org.itstep.j2_16.entity.Student;
 import org.itstep.j2_16.service.StudentService;
 import org.itstep.j2_16.service.StudentServiceUniversal;
@@ -23,9 +24,9 @@ public class AppUniversal {
         System.out.println("== START ==");
 
         List<Student> studentsForSaving = Arrays.asList(
-                new Student("Oleh", "Pinta"),
-                new Student("Alex", "Kochetyga"),
-                new Student("Igor", "Demennikov"));
+                new Student("Oleh", "Pinta", new Passport("MC", "723901")),
+                new Student("Alex", "Kochetyga", new Passport("MC", "723902")),
+                new Student("Igor", "Demennikov", new Passport("MC", "723903")));
 
         // define hibernate config to use
         SessionFactory sessionFactory;

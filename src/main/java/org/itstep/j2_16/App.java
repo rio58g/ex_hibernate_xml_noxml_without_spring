@@ -3,6 +3,7 @@ package org.itstep.j2_16;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import org.itstep.j2_16.entity.Passport;
 import org.itstep.j2_16.entity.Student;
 import org.itstep.j2_16.service.StudentService;
 import org.itstep.j2_16.service.StudentServiceNoXml;
@@ -54,12 +55,13 @@ public class App {
             studentService = new StudentServiceXml();
             System.out.println("-- run xml --");
         }
+
         HrDepartment hrDepartment = new HrDepartment(studentService);
 
         List<Student> studentsForSaving = new ArrayList<>();
-        studentsForSaving.add(new Student("Oleh", "Pinta"));
-        studentsForSaving.add(new Student("Alex", "Kochetyga"));
-        studentsForSaving.add(new Student("Igor", "Demennikov"));
+        studentsForSaving.add(new Student("Oleh", "Pinta", new Passport("MC", "723901")));
+        studentsForSaving.add(new Student("Alex", "Kochetyga", new Passport("CP", "836214")));
+        studentsForSaving.add(new Student("Igor", "Demennikov", new Passport("AC", "123123")));
 
         for (Student student : studentsForSaving) {
             Student savedStudent = hrDepartment.saveStudent(student);
