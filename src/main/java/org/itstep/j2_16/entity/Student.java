@@ -5,11 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.EAGER;
 
 @Entity(name = "STUDENT") // name of the entity to make a call from the sql criteria and so on
 @Table(name = "STUDENT") // name of the table in the DB
@@ -21,8 +21,8 @@ public class Student {
     private String firstName;
     private String lastName;
     private String fullName;
-    @OneToOne(cascade = ALL)
-    @JoinColumn(name = "passport_id")
+    @OneToOne(cascade = ALL, fetch = EAGER)
+    @JoinColumn(name = "passport_id", unique = true, nullable = false)
     private Passport passport;
     private String description;
 

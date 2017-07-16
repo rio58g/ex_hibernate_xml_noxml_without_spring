@@ -58,6 +58,10 @@ public class App {
 
         HrDepartment hrDepartment = new HrDepartment(studentService);
 
+        // uniqueness check
+//        Student studentSmith = hrDepartment.saveStudent(new Student("John", "Smith", new Passport("MC", "111111")));
+//        Student studentSmithDuplicate = hrDepartment.saveStudent(new Student("John2", "Smith2", studentSmith.getPassport()));
+
         List<Student> studentsForSaving = new ArrayList<>();
         studentsForSaving.add(new Student("Oleh", "Pinta", new Passport("MC", "723901")));
         studentsForSaving.add(new Student("Alex", "Kochetyga", new Passport("CP", "836214")));

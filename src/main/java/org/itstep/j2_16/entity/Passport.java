@@ -3,7 +3,6 @@ package org.itstep.j2_16.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 
 import static java.util.Arrays.asList;
 import static org.apache.commons.lang3.StringUtils.join;
@@ -14,6 +13,15 @@ public class Passport {
     private String id;
     private String passportSeries;
     private String passportNumber;
+
+    @OneToOne(mappedBy = "passport")
+    private Student student;
+    public Student getStudent() {
+        return student;
+    }
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
     public Passport() {
     }
