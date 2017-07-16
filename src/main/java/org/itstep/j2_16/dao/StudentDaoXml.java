@@ -9,10 +9,15 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.itstep.j2_16.entity.Student;
 
-public class StudentDaoXml {
+public class StudentDaoXml implements StudentDao {
+    private SessionFactory sessionFactory;
 
+    public StudentDaoXml() {
+        this.sessionFactory = new Configuration().configure().buildSessionFactory();
+    }
+
+    @Override
     public List<Student> getAll() {
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
@@ -30,5 +35,18 @@ public class StudentDaoXml {
         session.close();
 
         return students;
+    }
+
+    @Override
+    public Student save(Student student) {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+
+        Student saveStudent = (Student) session.merge(student);
+
+        session.getTransaction().commit();
+        session.close();
+
+        return saveStudent;
     }
 }

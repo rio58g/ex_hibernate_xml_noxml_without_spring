@@ -11,7 +11,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 import org.itstep.j2_16.entity.Student;
 
-public class HibernateUtil {
+public class HibernateConfig {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
@@ -28,7 +28,7 @@ public class HibernateUtil {
                 settings.put(Environment.USER, "root");
                 settings.put(Environment.PASS, "");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
-                settings.put(Environment.SHOW_SQL, "true");
+                settings.put(Environment.SHOW_SQL, "false");
                 settings.put(Environment.FORMAT_SQL, "true");
                 settings.put(Environment.HBM2DDL_AUTO, "create");
 

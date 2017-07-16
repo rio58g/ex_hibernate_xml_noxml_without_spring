@@ -1,25 +1,32 @@
 package org.itstep.j2_16.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "STUDENT")
+@Entity(name = "STUDENT") // name of the entity to make a call from the sql criteria and so on
+@Table(name = "STUDENT") // name of the table in the DB
 public class Student {
     @Id
     @GeneratedValue
     private int id;
+    @Column(name = "first_name")
     private String firstName;
     private String lastName;
     private String fullName;
     private String passport;
     private String description;
 
+    // hibernate merge can't work without default constructor
+    public Student() {
+    }
+
     public Student(String firstName, String lastName) {
         setFirstName(firstName);
         setLastName(lastName);
+
     }
 
     public int getId() {
@@ -36,7 +43,7 @@ public class Student {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-        setDescription();
+        setFullName();
     }
 
     public String getLastName() {
@@ -45,15 +52,19 @@ public class Student {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-        setDescription();
+        setFullName();
     }
 
+    @Column(name = "full_name")
     public String getFullName() {
-        return fullName;
+        return "value from getter: " + fullName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setFullName() {
+        this.fullName = (firstName == null || firstName.trim().isEmpty() ? "" : firstName + " ")
+                + (lastName == null || lastName.trim().isEmpty() ? "" : lastName);
+//        description = (StringUtils.isBlank(firstName) ? "" : firstName + " ")
+//                + (StringUtils.isBlank(lastName) ? "" : lastName);
     }
 
     public String getPassport() {
@@ -68,10 +79,7 @@ public class Student {
         return description;
     }
 
-    private void setDescription() {
-        description = (firstName == null || firstName.trim().isEmpty() ? "" : firstName + " ")
-                + (lastName == null || lastName.trim().isEmpty() ? "" : lastName);
-//        description = (StringUtils.isBlank(firstName) ? "" : firstName + " ")
-//                + (StringUtils.isBlank(lastName) ? "" : lastName);
+    private void setDescription(String description) {
+        this.description = description;
     }
 }

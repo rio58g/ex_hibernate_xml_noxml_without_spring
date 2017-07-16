@@ -6,14 +6,13 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.itstep.j2_16.config.HibernateConfig;
 import org.itstep.j2_16.entity.Student;
 
-public class StudentDaoNoXml implements StudentDao {
+public class StudentDaoUniversal implements StudentDao {
     private SessionFactory sessionFactory;
 
-    public StudentDaoNoXml() {
-        this.sessionFactory = HibernateConfig.getSessionFactory();
+    public StudentDaoUniversal(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
     @Override
@@ -38,11 +37,11 @@ public class StudentDaoNoXml implements StudentDao {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        Student savedStudent = (Student) session.merge(student);
+        Student saveStudent = (Student) session.merge(student);
 
         session.getTransaction().commit();
         session.close();
 
-        return savedStudent;
+        return saveStudent;
     }
 }
