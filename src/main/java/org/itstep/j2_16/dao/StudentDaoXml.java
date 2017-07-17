@@ -21,9 +21,7 @@ public class StudentDaoXml implements StudentDao {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-//        List<Student> students = session.createCriteria(Student.class)
-//                .setResultTransformer(DISTINCT_ROOT_ENTITY)
-//                .list();
+//        List<Student> students = session.createCriteria(Student.class).list();
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<Student> query = builder.createQuery(Student.class);
