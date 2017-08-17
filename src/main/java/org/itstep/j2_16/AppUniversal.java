@@ -51,6 +51,7 @@ public class AppUniversal {
         List<Student> students = hrDepartment.getAllStudents();
         System.out.println(join(students, LINE_SEPARATOR));
 
+//        in memory db
         startDBManager();
 
         System.out.println("== END ==");

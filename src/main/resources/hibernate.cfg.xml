@@ -7,9 +7,9 @@
 <!--MYSQL-->
         <!--<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>-->
         <!--<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>-->
-        <!--<property name="hibernate.connection.url">jdbc:mysql://localhost/students_crud</property>-->
+        <!--<property name="hibernate.connection.url">jdbc:mysql://localhost/student_crud</property>-->
         <!--<property name="hibernate.connection.username">root</property>-->
-        <!--<property name="hibernate.connection.password"></property>-->
+        <!--<property name="hibernate.connection.password">root</property>-->
 <!--HSQLDB-->
         <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
         <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>

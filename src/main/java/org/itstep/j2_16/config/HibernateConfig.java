@@ -24,14 +24,14 @@ public class HibernateConfig {
                 // Hibernate settings equivalent to hibernate.cfg.xml's properties
                 Map<String, String> settings = new HashMap<>();
 
-                // mysql
+//                 mysql
 //                settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-//                settings.put(Environment.URL, "jdbc:mysql://localhost/students_crud");
+//                settings.put(Environment.URL, "jdbc:mysql://localhost/student_crud");
 //                settings.put(Environment.USER, "root");
-//                settings.put(Environment.PASS, "");
+//                settings.put(Environment.PASS, "root");
 //                settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
 
-                // hsqldb
+//                 hsqldb
                 settings.put(Environment.DRIVER, "org.hsqldb.jdbcDriver");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.HSQLDialect");
                 settings.put(Environment.URL, "jdbc:hsqldb:mem:testdb");
