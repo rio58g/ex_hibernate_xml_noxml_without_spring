@@ -37,11 +37,11 @@ public class StudentDaoUniversal implements StudentDao {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        Student saveStudent = (Student) session.merge(student);
+        Student savedStudent = (Student) session.merge(student);
 
         session.getTransaction().commit();
         session.close();
 
-        return saveStudent;
+        return savedStudent;
     }
 }

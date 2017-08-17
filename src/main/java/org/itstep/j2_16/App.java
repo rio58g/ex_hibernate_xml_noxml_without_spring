@@ -15,7 +15,7 @@ import static org.apache.commons.lang3.StringUtils.join;
 
 public class App {
 
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         System.out.println("== START ==");
 
         System.out.println("-- Program arguments: -");

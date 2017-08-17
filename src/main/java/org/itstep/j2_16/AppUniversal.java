@@ -19,7 +19,7 @@ import static org.apache.commons.lang3.SystemUtils.LINE_SEPARATOR;
 
 public class AppUniversal {
 
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         System.out.println("== START ==");
 
         List<Student> studentsForSaving = Arrays.asList(
@@ -31,11 +31,11 @@ public class AppUniversal {
         SessionFactory sessionFactory;
         String is_xml = getProperty("is_xml");
         if (isEmpty(is_xml) || is_xml.equals("false")) {
-            sessionFactory = HibernateConfig.getSessionFactory();
             System.out.println("-- run NO xml --");
+            sessionFactory = HibernateConfig.getSessionFactory();
         } else {
-            sessionFactory = new Configuration().configure().buildSessionFactory();
             System.out.println("-- run xml --");
+            sessionFactory = new Configuration().configure().buildSessionFactory();
         }
 
         // initialization process
