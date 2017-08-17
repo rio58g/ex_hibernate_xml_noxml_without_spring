@@ -15,6 +15,7 @@
         <jdk.version>1.8</jdk.version>
         <hibernate-version>5.2.6.Final</hibernate-version>
         <common-lang3-version>3.0</common-lang3-version>
+        <hsqldb.version>2.3.2</hsqldb.version>
         <junit-version>4.7</junit-version>
     </properties>
     <dependencies>
@@ -34,6 +35,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.38</version>
+        </dependency>
+        <!-- HyperSQL DB -->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>${hsqldb.version}</version>
         </dependency>
         <!-- commons-lang3 -->
         <dependency>

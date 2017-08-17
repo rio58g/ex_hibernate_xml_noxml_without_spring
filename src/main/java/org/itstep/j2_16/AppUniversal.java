@@ -16,6 +16,7 @@ import static java.lang.System.getProperty;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 import static org.apache.commons.lang3.StringUtils.join;
 import static org.apache.commons.lang3.SystemUtils.LINE_SEPARATOR;
+import static org.itstep.j2_16.config.StartHsqlDbManager.startDBManager;
 
 public class AppUniversal {
 
@@ -49,6 +50,8 @@ public class AppUniversal {
         // get all students
         List<Student> students = hrDepartment.getAllStudents();
         System.out.println(join(students, LINE_SEPARATOR));
+
+        startDBManager();
 
         System.out.println("== END ==");
     }
