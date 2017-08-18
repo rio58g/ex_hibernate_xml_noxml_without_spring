@@ -16,9 +16,9 @@ import static org.apache.commons.lang3.StringUtils.join;
 public class App {
 
     public static void main(String[] args) {
-        System.out.println("== START ==");
+        System.out.println("OPINTA");
 
-        System.out.println("-- Program arguments: -");
+        System.out.println("== START2 ==");
 
 //        // creating anonymous class implementing Consumer interface without using keyword 'implement'
 //        Consumer<String> stringConsumer_1 = new Consumer<String>() {
