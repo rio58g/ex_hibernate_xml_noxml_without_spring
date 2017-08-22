@@ -6,8 +6,9 @@
     <session-factory>
 <!--MYSQL-->
 //123456
-            fjkasjfk
+
 <!--IN order to use MySQL-->
+        <!--Hello IN order to use MySQL-->
         <!--<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>-->
         <!--<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>-->
         <!--<property name="hibernate.connection.url">jdbc:mysql://localhost/student_crud</property>-->
