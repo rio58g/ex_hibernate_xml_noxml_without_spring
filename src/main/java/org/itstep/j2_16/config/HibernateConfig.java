@@ -24,7 +24,7 @@ public class HibernateConfig {
 
                 // Hibernate settings equivalent to hibernate.cfg.xml's properties
                 Map<String, String> settings = new HashMap<>();
-
+//yuriy
 //                 mysql
 //                settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
 //                settings.put(Environment.URL, "jdbc:mysql://localhost/student_crud");
