@@ -15,6 +15,7 @@ public class HibernateConfig {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
+    // blabla
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
