@@ -7,6 +7,7 @@ import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.itstep.j2_16.entity.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class StudentDaoUniversal implements StudentDao {
     private SessionFactory sessionFactory;

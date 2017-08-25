@@ -11,6 +11,7 @@ import org.itstep.j2_16.entity.Student;
 import org.itstep.j2_16.service.StudentService;
 import org.itstep.j2_16.service.StudentServiceUniversal;
 import org.itstep.j2_16.util.HrDepartment;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static java.lang.System.getProperty;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
@@ -23,21 +24,26 @@ public class AppUniversal {
     public static void main(String[] args) {
         System.out.println("== START ==");
 
-        List<Student> studentsForSaving = Arrays.asList(
-                new Student("Oleh", "Pinta"),
-                new Student("Alex", "Kochetyga"),
-                new Student("Igor", "Demennikov"));
+        final ClassPathXmlApplicationContext classPathXmlApplicationContext =
+                new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        // define hibernate config to use
-        SessionFactory sessionFactory;
-        String is_xml = getProperty("is_xml");
-        if (isEmpty(is_xml) || is_xml.equals("false")) {
-            System.out.println("-- run NO xml --");
-            sessionFactory = HibernateConfig.getSessionFactory();
-        } else {
-            System.out.println("-- run xml --");
-            sessionFactory = new Configuration().configure().buildSessionFactory();
-        }
+        Student studentPinta = (Student) classPathXmlApplicationContext.getBean("studentPinta");
+        Student studentKochetyga = (Student) classPathXmlApplicationContext.getBean("studentKochetyga");
+
+        List<Student> studentsForSaving = Arrays.asList(studentPinta, studentKochetyga);
+
+//        // define hibernate config to use
+//        SessionFactory sessionFactory;
+//        String is_xml = getProperty("is_xml");
+//        if (isEmpty(is_xml) || is_xml.equals("false")) {
+//            System.out.println("-- run NO xml --");
+//            sessionFactory = HibernateConfig.getSessionFactory();
+//        } else {
+//            System.out.println("-- run xml --");
+//            sessionFactory = new Configuration().configure().buildSessionFactory();
+//        }
+
+        SessionFactory sessionFactory = (SessionFactory) classPathXmlApplicationContext.getBean("sessionFactory");
 
         // initialization process
         StudentDao studentDao = new StudentDaoUniversal(sessionFactory);
