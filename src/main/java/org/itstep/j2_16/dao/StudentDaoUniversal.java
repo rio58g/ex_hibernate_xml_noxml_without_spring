@@ -8,10 +8,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.itstep.j2_16.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class StudentDaoUniversal implements StudentDao {
     private SessionFactory sessionFactory;
 
+    @Autowired
     public StudentDaoUniversal(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
