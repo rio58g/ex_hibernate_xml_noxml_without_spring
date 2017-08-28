@@ -10,11 +10,16 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 import org.itstep.j2_16.entity.Student;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
+@Configuration
 public class HibernateConfig {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
+    @Bean(name = "sessionFactory")
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
