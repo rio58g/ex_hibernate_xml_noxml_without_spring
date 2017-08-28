@@ -12,3 +12,16 @@
 `
     startDBManager();
 `
+
+#### To use with jetty plugin (8000 port is default)
+`
+    
+    $ mvnDebug jetty:run
+    
+    then make config:
+    - Run -> Edit Configuration
+    - In Run/Debug Configuration window, you need to click on (+) button to add a new configuration
+    - Select Remote
+    - Keep the default configuration as is, just change the listening port to corresponding one (8000).
+    Run Degug config
+`

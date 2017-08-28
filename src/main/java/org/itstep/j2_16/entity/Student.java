@@ -21,11 +21,9 @@ public class Student {
 
     // hibernate merge can't work without default constructor
     public Student() {
-        System.out.println(" === EMPTY === ");
     }
 
     public Student(String firstName, String lastName) {
-        System.out.println("==== CONSTRUCTOR CALL ====");
         setFirstName(firstName);
         setLastName(lastName);
 
@@ -59,14 +57,12 @@ public class Student {
 
     @Column(name = "full_name")
     public String getFullName() {
-        return "value from getter: " + fullName;
+        return fullName;
     }
 
     public void setFullName() {
         this.fullName = (firstName == null || firstName.trim().isEmpty() ? "" : firstName + " ")
                 + (lastName == null || lastName.trim().isEmpty() ? "" : lastName);
-//        description = (StringUtils.isBlank(firstName) ? "" : firstName + " ")
-//                + (StringUtils.isBlank(lastName) ? "" : lastName);
     }
 
     public String getPassport() {
