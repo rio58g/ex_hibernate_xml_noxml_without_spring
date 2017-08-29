@@ -22,6 +22,7 @@
     <!-- static resources like css -->
     <!--<mvc:resources mapping="/resources/**" location="/resources/" />-->
 
+    <!-- to achieve the same in pure java use @EnableWebMvc -->
     <mvc:annotation-driven />
 
 </beans>
