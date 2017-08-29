@@ -12,13 +12,15 @@
 
     <context:component-scan base-package="org.itstep.j2_16" />
 
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/WEB-INF/views/jsp/" />
-        <property name="suffix" value=".jsp" />
-    </bean>
+    <!-- html pages settings -->
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+        <!--<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>-->
+        <!--<property name="prefix" value="/WEB-INF/views/jsp/" />-->
+        <!--<property name="suffix" value=".jsp" />-->
+    <!--</bean>-->
 
-    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <!-- static resources like css -->
+    <!--<mvc:resources mapping="/resources/**" location="/resources/" />-->
 
     <mvc:annotation-driven />
 

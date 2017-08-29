@@ -13,11 +13,12 @@
         <servlet-class>
             org.springframework.web.servlet.DispatcherServlet
         </servlet-class>
-        <!-- in case we don't want to call our servlet context resource dispatcherServlet-servlet.xml -->
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/spring-mvc-config.xml</param-value>
-        </init-param>
+        <!--&lt;!&ndash; the default name and place for the servlet WebApplicationContext is /WEB-INF/[servletName]-servlet.xml &ndash;&gt;-->
+        <!--&lt;!&ndash; we need this section only if we don't want default name or place &ndash;&gt;-->
+        <!--<init-param>-->
+            <!--<param-name>contextConfigLocation</param-name>-->
+            <!--<param-value>/WEB-INF/dispatcherServlet-servlet.xml</param-value>-->
+        <!--</init-param>-->
         <load-on-startup>1</load-on-startup>
     </servlet>
 
@@ -33,9 +34,11 @@
         <!--</listener-class>-->
     <!--</listener>-->
 
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/applicationContext.xml</param-value>
-    </context-param>
+    <!--&lt;!&ndash; the default name and place for the root WebApplicationContext is /WEB-INF/applicationContext.xml &ndash;&gt;-->
+    <!--&lt;!&ndash; we need this section only if we don't want default name or place &ndash;&gt;-->
+    <!--<context-param>-->
+        <!--<param-name>contextConfigLocation</param-name>-->
+        <!--<param-value>/WEB-INF/applicationContext.xml</param-value>-->
+    <!--</context-param>-->
 
 </web-app>
