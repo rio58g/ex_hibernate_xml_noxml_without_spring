@@ -16,6 +16,12 @@
 #### To use with jetty plugin (8000 port is default)
 `
     
+    $ mvn jetty:run
+`
+
+##### to debug with embedded Jetty
+`
+    
     $ mvnDebug jetty:run
     
     then make config:

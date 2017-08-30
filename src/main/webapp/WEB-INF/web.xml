@@ -13,12 +13,12 @@
         <servlet-class>
             org.springframework.web.servlet.DispatcherServlet
         </servlet-class>
-        <!--&lt;!&ndash; the default name and place for the servlet WebApplicationContext is /WEB-INF/[servletName]-servlet.xml &ndash;&gt;-->
-        <!--&lt;!&ndash; we need this section only if we don't want default name or place &ndash;&gt;-->
-        <!--<init-param>-->
-            <!--<param-name>contextConfigLocation</param-name>-->
-            <!--<param-value>/WEB-INF/dispatcherServlet-servlet.xml</param-value>-->
-        <!--</init-param>-->
+        <!-- the default name and place for the servlet WebApplicationContext is /WEB-INF/[servletName]-servlet.xml -->
+        <!-- we need this section only if we don't want default name or place -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/dispatcherServlet-servlet.xml</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
@@ -27,18 +27,18 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!--&lt;!&ndash; For root context &ndash;&gt;-->
-    <!--<listener>-->
-        <!--<listener-class>-->
-            <!--org.springframework.web.context.ContextLoaderListener-->
-        <!--</listener-class>-->
-    <!--</listener>-->
+     <!--For root context-->
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
 
-    <!--&lt;!&ndash; the default name and place for the root WebApplicationContext is /WEB-INF/applicationContext.xml &ndash;&gt;-->
-    <!--&lt;!&ndash; we need this section only if we don't want default name or place &ndash;&gt;-->
-    <!--<context-param>-->
-        <!--<param-name>contextConfigLocation</param-name>-->
-        <!--<param-value>/WEB-INF/applicationContext.xml</param-value>-->
-    <!--</context-param>-->
+    <!-- the default name and place for the root WebApplicationContext is /WEB-INF/applicationContext.xml -->
+    <!-- we need this section only if we don't want default name or place -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
 
 </web-app>
